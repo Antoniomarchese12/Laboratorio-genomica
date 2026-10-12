@@ -1,0 +1,7 @@
+#kmmer based survey
+
+
+```bash
+# comando per fare il qc delle raw reads appena sequenziate
+/home/PERSONALE/mirko.martini3/Lab_CompGeno/00_practice/00_data/00_reads/SRR11672503_1.fastq.gz /home/PERSONALE/mirko.martini3/Lab_CompGeno/00_practice/00_data/00_reads/SRR11672503_2.fastq.gz
+```
