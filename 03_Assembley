@@ -1,0 +1,16 @@
+## rientro esattamente nella cartella in cui ho creato il file
+
+## nano + nome file per entrare nello script
+
+nano mapping.sh
+
+# aggiungiamo il mapping long reads o duplicando o creando un blocco di codici intero
+
+ln -s creo il nuovo link
+
+#lancio lo script (con bash)
+
+bash mapping.sh 8 Anoste_raw.fasta SRR11672503_1_paired.fastq SRR11672503_2_paired.fastq Anoste_pol SRR11672506.fastq.gz
+
+#creo una nuova window nella screen
+ctrl A + c (mi sposto con ctrl A + P o N)
