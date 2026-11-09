@@ -1,1 +1,37 @@
 
+#!/bin/bash
+
+# Mapping short and long reads on assembly
+
+CPU=$1
+INPUT=$2
+SR_1=$3
+SR_2=$4
+PREFIX=$5
+LR=$6
+
+#MAPPING SHORT READS
+#mapping short reads on assembly
+minimap2 -ax sr --MD -t "$CPU" "$INPUT" "$SR_1" "$SR_2" > "$PREFIX"_sr.sam
+
+# conversion SAM into BAM
+samtools view -b "$PREFIX"_sr.sam > "$PREFIX"_sr.bam
+rm "$PREFIX".sam
+
+# sorting and indexing of BAM file
+samtools sort -@"$CPU" -o "$PREFIX"_sr_sorted.bam "$PREFIX"_sr.bam
+samtools index "$PREFIX"_sr_sorted.bam
+
+
+#MAPPING LONG READS
+#mapping long reads on assembly
+minimap2 -ax map-pb --MD -t "$CPU" "$INPUT" "$LR" > "$PREFIX"_lr.sam
+
+# conversion SAM into BAM
+samtools view -b "$PREFIX"_lr.sam > "$PREFIX"_lr.bam
+rm "$PREFIX"_lr.sam
+
+# sorting and indexing of BAM file
+samtools sort -@"$CPU" -o "$PREFIX"_lr_sorted.bam "$PREFIX"_lr.bam
+samtools index "$PREFIX"_lr_sorted.bam
+
