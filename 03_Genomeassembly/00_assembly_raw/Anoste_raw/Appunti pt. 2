@@ -1,3 +1,6 @@
 
+grep -v '^##' Anoste_blobDB_table.txt | column -t -s $'\t' | less`
 grep= trova
+^=inizio di riga 
+-v=inverte il pattern
 
