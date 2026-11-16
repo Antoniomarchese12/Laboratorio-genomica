@@ -12,3 +12,7 @@ awk= trasforma un fasta in una sua versione temporanea con prima colonna Header 
 -Ff= per fare un grep tra due file
 -=specifica alla pipe dove mettere l'output del mio awk
 tr= translate ogni t(tabulazione) in n (new lane).
+
+$6= colonna
+(!=)= diversa da
+si scrive in singole virgolette
