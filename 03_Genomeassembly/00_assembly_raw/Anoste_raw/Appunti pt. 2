@@ -9,3 +9,6 @@ awk '{ if ((NR>1)&&($0~/^>/)) { printf("\n%s", $0); } else if (NR==1) { printf("
 
 awk= trasforma un fasta in una sua versione temporanea con prima colonna Header e seconda sequenza. Trasfrorma tutto in righe perchè grep funziona in righe
 -w=serve a forzare che il pattern sia letto esattamente come abbiamo scritto
+-Ff= per fare un grep tra due file
+-=specifica alla pipe dove mettere l'output del mio awk
+tr= translate ogni t(tabulazione) in n (new lane).
