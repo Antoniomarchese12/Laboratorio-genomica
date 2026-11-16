@@ -4,3 +4,7 @@ grep= trova
 ^=inizio di riga 
 -v=inverte il pattern
 
+## ELABORA FILE A COLONNE
+awk '{ if ((NR>1)&&($0~/^>/)) { printf("\n%s", $0); } else if (NR==1) { printf("%s", $0); } else { printf("\t%s", $0); } }' in.fa | grep -w -v -Ff patterns.txt - | tr "\t" "\n" > out.fa
+
+awk= trasforma un fasta in una sua versione temporanea con prima colonna Header e seconda sequenza. Trasfrorma tutto in righe perchè grep funziona in righe
